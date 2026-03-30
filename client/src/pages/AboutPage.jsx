@@ -1,7 +1,8 @@
 import React from "react";
 import {
   Sprout, CloudSun, FlaskConical, Microscope,
-  BrainCircuit, Network, Mail, User, Code2, Layers, Github
+  BrainCircuit, Network, Mail, User, Code2, Layers, Github,
+  ExternalLink, MapPin, GraduationCap, Zap, Globe
 } from "lucide-react";
 
 const TECH_STACK = [
@@ -109,56 +110,106 @@ export default function AboutPage() {
       </section>
 
       {/* ── Developer ─────────────────────────────────────────────────────── */}
-      <section className="glass-green rounded-2xl p-8">
-        <div className="flex items-center gap-3 mb-6">
+      <section className="glass-green rounded-2xl overflow-hidden">
+        {/* Header bar */}
+        <div className="px-8 py-5 border-b border-emerald-500/20 flex items-center gap-3">
           <div className="w-9 h-9 bg-emerald-500/20 rounded-xl flex items-center justify-center">
             <User size={18} className="text-emerald-400" />
           </div>
           <h2 className="text-xl font-bold text-white">Developer</h2>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-          {/* Avatar */}
-          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500/30 to-teal-500/20
-                          border border-emerald-500/30 flex items-center justify-center flex-shrink-0">
-            <span className="text-3xl font-black text-emerald-400">F</span>
-          </div>
-
-          {/* Info */}
-          <div className="space-y-3 flex-1">
-            <div>
-              <h3 className="text-2xl font-bold text-white">Faheem Shiledar</h3>
-              <p className="text-slate-400 text-sm mt-1">
-                Full-stack developer passionate about building AI-powered web
-                applications. AgriSense was designed and developed as a
-                portfolio project to demonstrate real-world AI integration in
-                agriculture.
-              </p>
+        <div className="p-8 space-y-8">
+          {/* Avatar + name row */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            {/* Avatar */}
+            <div className="relative flex-shrink-0">
+              <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-emerald-500/30 to-teal-500/20
+                              border border-emerald-500/30 flex items-center justify-center">
+                <span className="text-4xl font-black text-emerald-400">F</span>
+              </div>
+              {/* Online dot */}
+              <span className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full
+                               border-2 border-slate-900 animate-pulse" />
             </div>
 
+            {/* Name & bio */}
+            <div className="space-y-2 flex-1">
+              <div>
+                <h3 className="text-2xl font-bold text-white">Faheem Shiledar</h3>
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1">
+                  <span className="flex items-center gap-1.5 text-sm text-slate-400">
+                    <MapPin size={13} className="text-emerald-400/70" />
+                    India
+                  </span>
+                  <span className="flex items-center gap-1.5 text-sm text-slate-400">
+                    <GraduationCap size={13} className="text-emerald-400/70" />
+                    Engineering Student
+                  </span>
+                  <span className="flex items-center gap-1.5 text-sm text-slate-400">
+                    <Zap size={13} className="text-emerald-400/70" />
+                    Full-Stack Developer
+                  </span>
+                </div>
+              </div>
+              <p className="text-slate-400 text-sm leading-relaxed max-w-lg">
+                Passionate about building AI-powered web applications that solve real-world
+                problems. AgriSense was designed and developed as a portfolio project to
+                demonstrate real-world AI integration in agriculture.
+              </p>
+            </div>
+          </div>
+
+          {/* Contact links */}
+          <div>
+            <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-3">
+              Get in touch
+            </p>
             <div className="flex flex-wrap gap-3">
               <a
                 href="mailto:faheemshiledar@gmail.com"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/70
-                           border border-slate-700/50 text-sm text-slate-300
-                           hover:text-emerald-400 hover:border-emerald-500/40 transition-all"
+                className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl
+                           bg-slate-800/70 border border-slate-700/50 text-sm text-slate-300
+                           hover:text-emerald-400 hover:border-emerald-500/40 hover:bg-slate-800
+                           transition-all duration-200 group"
               >
-                <Mail size={14} />
+                <Mail size={15} className="text-slate-500 group-hover:text-emerald-400 transition-colors" />
                 faheemshiledar@gmail.com
               </a>
               <a
                 href="https://github.com/faheemshiledar"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/70
-                           border border-slate-700/50 text-sm text-slate-300
-                           hover:text-emerald-400 hover:border-emerald-500/40 transition-all"
+                className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl
+                           bg-slate-800/70 border border-slate-700/50 text-sm text-slate-300
+                           hover:text-emerald-400 hover:border-emerald-500/40 hover:bg-slate-800
+                           transition-all duration-200 group"
               >
-                <Github size={14} />
+                <Github size={15} className="text-slate-500 group-hover:text-emerald-400 transition-colors" />
                 github.com/faheemshiledar
+                <ExternalLink size={11} className="text-slate-600 group-hover:text-emerald-400/60 transition-colors" />
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Bottom banner */}
+        <div className="px-8 py-4 bg-emerald-500/5 border-t border-emerald-500/20
+                        flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+          <p className="text-xs text-slate-500">
+            Built with ❤️ for farmers everywhere — open source &amp; free to use
+          </p>
+          <a
+            href="https://github.com/faheemshiledar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-xs text-emerald-400/70
+                       hover:text-emerald-400 transition-colors"
+          >
+            <Globe size={11} />
+            View on GitHub
+            <ExternalLink size={10} />
+          </a>
         </div>
       </section>
 
