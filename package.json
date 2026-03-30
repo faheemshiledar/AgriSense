@@ -1,0 +1,14 @@
+{
+  "name": "agrisense-ai",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev:server": "node server.js",
+    "dev:client": "cd client && npm run dev",
+    "install:all": "npm install && cd client && npm install"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
